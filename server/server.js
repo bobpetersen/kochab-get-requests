@@ -1,17 +1,17 @@
-const express = require("express"); //
+const express = require('express'); //
 const app = express();
 const PORT = 3000;
 
-const quotes_data = require("./modules/quotes-data");
+const quotes_data = require('./modules/quotes-data');
 
-app.use(express.static("server/public"));
+app.use(express.static('server/public'));
 
-app.get("/quote", (req, res) => {
+app.get('/quote', (req, res) => {
   const randomNumber = Math.floor(Math.random() * quotes_data.length);
   res.send(quotes_data[randomNumber]);
 });
 
-app.get("/all-quotes", (req, res) => {
+app.get('/all-quotes', (req, res) => {
   res.send(quotes_data);
 });
 
